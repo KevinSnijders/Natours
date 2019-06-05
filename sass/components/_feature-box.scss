@@ -12,12 +12,16 @@
   }
 
   &__icon {
-    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-    color: transparent;
+
+    color: $color-primary;
     font-size: 6rem;
     margin-bottom: .5rem;
-    @include vp-background-clip(text);
 
+    @supports (background-clip: initial) {
+      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+      @include vp-background-clip(text);
+      color: transparent;
+    }
     @include respond(tab-port) {
       margin-bottom: 0;
     }
@@ -26,5 +30,4 @@
   &:hover {
     transform: translateY(-1.5rem) scale(1.03);
   }
-
 }

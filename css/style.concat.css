@@ -563,10 +563,7 @@ body {
         font-size: 1rem; } }
 
 .heading-secondary {
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
-  color: transparent;
+  color: #55c57a;
   display: inline-block;
   font-size: 3.5rem;
   font-weight: 700;
@@ -581,6 +578,12 @@ body {
   -webkit-transition-timing-function: ease-in;
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in; }
+  @supports (background-clip: initial) {
+    .heading-secondary {
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-image: linear-gradient(to right, #7ed56f, #28b485);
+      color: transparent; } }
   @media only screen and (max-width: 56.25em) {
     .heading-secondary {
       font-size: 3rem; } }
@@ -787,12 +790,15 @@ body {
     .feature-box {
       padding: 2rem; } }
   .feature-box__icon {
-    background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
-    color: transparent;
+    color: #55c57a;
     font-size: 6rem;
-    margin-bottom: .5rem;
-    -webkit-background-clip: text;
-    background-clip: text; }
+    margin-bottom: .5rem; }
+    @supports (background-clip: initial) {
+      .feature-box__icon {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent; } }
     @media only screen and (max-width: 56.25em) {
       .feature-box__icon {
         margin-bottom: 0; } }
@@ -838,11 +844,11 @@ body {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; }
     .card__picture--1 {
-      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("../img/nat-5.jpg"); }
+      background-image: url("../img/nat-5.jpg"), linear-gradient(to right bottom, #ffb900, #ff7730); }
     .card__picture--2 {
-      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url("../img/nat-6.jpg"); }
+      background-image: url("../img/nat-6.jpg"), linear-gradient(to right bottom, #7ed56f, #28b485); }
     .card__picture--3 {
-      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("../img/nat-7.jpg"); }
+      background-image: url("../img/nat-7.jpg"), linear-gradient(to right bottom, #2998ff, #5643fa); }
   .card__heading {
     color: #fff;
     font-size: 2.8rem;
@@ -947,10 +953,10 @@ body {
     float: left;
     -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
-    position: relative; }
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden; }
     @media only screen and (max-width: 37.5em) {
       .story__shape {
         transform: translateX(-3rem) skewX(0); } }
@@ -992,9 +998,11 @@ body {
   opacity: 0.15;
   overflow: hidden; }
   .bg-video__content {
-    height: 100%;
-    width: 100%;
-    object-fit: cover; }
+    height: 100%; }
+    @supports (object-fit: cover) {
+      .bg-video__content {
+        object-fit: cover;
+        object-position: 50% 50%; } }
 
 .form__group:not(:last-child) {
   margin-bottom: 2rem; }
