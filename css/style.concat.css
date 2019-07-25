@@ -636,6 +636,9 @@ body {
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border: 0;
+  cursor: pointer;
   -webkit-transition-duration: 0.2s;
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
@@ -644,12 +647,9 @@ body {
   transition-property: transform;
   -webkit-transition-timing-function: linear;
   -o-transition-timing-function: linear;
-  transition-timing-function: linear;
-  border: 0;
-  cursor: pointer; }
+  transition-timing-function: linear; }
 
 .btn:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transform: translateY(-0.3rem); }
   .btn:hover::after {
     opacity: 0;

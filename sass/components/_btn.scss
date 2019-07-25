@@ -9,15 +9,14 @@
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
-    @include transition($default-transition-duration, transform, linear);
-
+    box-shadow: 0 10px 20px rgba($color-black, .2);
     // Change for button element
     border: 0;
     cursor: pointer;
+    @include transition($default-transition-duration, transform, linear);
   }
 
   &:hover {
-    box-shadow: 0 10px 20px rgba($color-black, .2);
     transform: translateY(-.3rem);
 
     &::after {
@@ -44,7 +43,6 @@
     @include transition($default-transition-duration, initial, linear);
     width: 100%;
     z-index: -1;
-
   }
 
   &--white {
@@ -88,6 +86,7 @@
     box-shadow: 0 1rem 2rem rgba($color-black, .15);
     color: $color-white;
     transform: translateY(-2px);
+    border-radius: $border-radius;
   }
 
   &:active {

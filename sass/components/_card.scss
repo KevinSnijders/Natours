@@ -77,6 +77,10 @@
     top: 12rem;
     right: 2rem;
     width: 75%;
+    clip-path: polygon(25% 0%, 100% 0, 100% 100%, 25% 100%, 0% 50%);
+    @include respond(tab-land) {
+      clip-path: polygon(15% 0%, 100% 0, 100% 100%, 0% 100%, 0% 100%);
+    }
   }
 
   &__heading-span {

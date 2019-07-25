@@ -10,12 +10,14 @@
   transform: skewX(-12deg);
 
   @include respond(tab-port) {
-    width: 100%;
+    max-width: 100%;
+    width: auto;
     padding: 4rem 4rem 4rem 7rem;
+    transform: skewX(0);
   }
 
   @include respond(phone) {
-    transform: skewX(0);
+
   }
 
   &__shape {
@@ -29,7 +31,7 @@
     border-radius:50%;
     overflow: hidden;
 
-    @include respond(phone) {
+    @include respond(tab-port) {
       transform: translateX(-3rem) skewX(0);
     }
   }
@@ -43,7 +45,7 @@
   &__text {
     transform: skewX(12deg);
 
-    @include respond(phone) {
+    @include respond(tab-port) {
       transform: skewX(0);
     }
   }
